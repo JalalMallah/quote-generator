@@ -7,12 +7,31 @@ import 'styles/global.scss';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [quotes, setQuotes] = useState([]);
 
   const URL = 'https://type.fit/api/quotes';
 
-  useEffect(() => {}, []);
+  function getQuotes() {
+    fetch(URL)
+      .then(res => res.json())
+      .then(data => {
+        setQuotes(data);
+        setIsLoading(false);
+        console.log(data);
+      })
+      .catch(err => console.log(err));
+  }
 
-  return <Spinner />;
+  useEffect(() => {
+    getQuotes();
+  }, []);
+
+  return (
+    <>
+      {isLoading && <Spinner />}
+      {!isLoading && <Quote quotes={quotes} />}
+    </>
+  );
 };
 
 export default App;

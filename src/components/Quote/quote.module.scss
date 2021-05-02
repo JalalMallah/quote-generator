@@ -1,10 +1,17 @@
 .container {
   width: 90%;
-  max-width: 800px;
   margin: 0 auto;
   padding: 4rem;
   background-color: var(--dark-blue);
   border-radius: 0 80px 0 80px;
+
+  @media (min-width: 768px) {
+    width: 700px;
+  }
+
+  @media (min-width: 1024px) {
+    width: 800px;
+  }
 }
 
 .title {
