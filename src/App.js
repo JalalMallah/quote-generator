@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import Quote from 'components/Quote/Quote';
+import Spinner from 'components/Spinner/Spinner';
 
 import 'styles/global.scss';
 
@@ -11,7 +12,7 @@ const App = () => {
 
   useEffect(() => {}, []);
 
-  return <Quote />;
+  return <Spinner />;
 };
 
 export default App;
