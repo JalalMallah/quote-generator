@@ -1,6 +1,6 @@
 # Quote Generator
 
-[Live Preview]() 🚀
+[Live Preview](https://apiquotegenerator.netlify.app/) 🚀
 
 > This simple project is based on TypeFit API for quotes. It fetches the quotes on page load and displays a random one. It is possible to generate a new random quote by clicking the button 'Generate New Quote'.
 
