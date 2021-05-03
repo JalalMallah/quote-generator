@@ -17,7 +17,6 @@ const App = () => {
       .then(data => {
         setQuotes(data);
         setIsLoading(false);
-        console.log(data);
       })
       .catch(err => console.log(err));
   }
@@ -26,12 +25,7 @@ const App = () => {
     getQuotes();
   }, []);
 
-  return (
-    <>
-      {isLoading && <Spinner />}
-      {!isLoading && <Quote quotes={quotes} />}
-    </>
-  );
+  return <>{isLoading ? <Spinner /> : <Quote quotes={quotes} />}</>;
 };
 
 export default App;

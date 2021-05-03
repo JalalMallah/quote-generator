@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 
 import * as s from './quote.module.scss';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+
 export default function Quote({ quotes }) {
   const [author, setAuthor] = useState('');
   const [text, setText] = useState('');
@@ -20,7 +23,8 @@ export default function Quote({ quotes }) {
 
   return (
     <div className={s.container}>
-      {console.log(quotes)}
+      <FontAwesomeIcon icon={faQuoteLeft} className={s.quoteLeft} />
+      <FontAwesomeIcon icon={faQuoteRight} className={s.quoteRight} />
       <h1 className={s.title}>Quote Generator</h1>
       <p className={s.text}>{text}</p>
       <p className={s.author}>{author}</p>
